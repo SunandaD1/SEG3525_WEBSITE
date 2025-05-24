@@ -1,0 +1,311 @@
+*
+{
+    margin: 0;
+    padding:0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif; /* from google fonts */
+    background-color: #f3ccf4d0; 
+
+}
+
+.header{
+    min-height: 100vh; /* min height covers at least entire viewport height */
+    width: 100%; 
+    background-image: linear-gradient(rgba(45, 12, 72, 0.7),rgba(163, 80, 207, 0.7)),url(images/flowers.jpeg);
+    /* background will have a green cover with 70% opacity, behind the words */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+nav{
+    display:flex;
+    padding: 2% 6%; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 100px; /* resizes logo */
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none; /* removes bulleted list */
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{ /* navigation links info */
+
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li ::after{ /* for hover effect on links */
+    content: '';
+    width: 0%; /* hides underline */
+    height: 2px;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    transition: 0.5s; /* time taken for hover color to show */
+}
+
+.nav-links ul li :hover::after{ /* must have space after li or wont work */
+    width: 100%;
+}
+
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%); /* to center */
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 10px 0 40px; /* 10 top, 0 left and right, 40 bottom*/
+    font-size: 14px;
+    color: white;
+}
+
+@media(max-width:700px){ /* to navigate nice on smaller devices*/
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block; /* block changes default behaviour into block-level
+        and will usually take up the full width available*/
+
+    }
+    .nav-links{ /* creates menu bar on side on phones */
+        position: absolute;
+        background: #ffffff;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+    }
+}
+
+/* icon used as a logo, to try bootstrap icons */
+
+.logo-icon i {
+    font-size: 4rem; /* size of icon */
+    color: white;     
+}
+
+/* Me Section */
+
+.ME {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.ME .mePhoto img{
+    border-radius: 10px; /* Makes the image rounded edges */
+    max-width: 400px; 
+    height: auto; /* Automatically adjusts the height while maintaining the aspect ratio */
+    box-shadow: 0 0 20px 0px rgba(112, 111, 111, 0.5);;
+}
+
+.ME .mePhoto {
+    flex-basis: 10%;
+    text-align: center;
+}
+
+
+.ME .whoami-col {
+    flex-basis: 60%; /* amount of horizontal space taken  */
+    background: #f4f3cc;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 10px; /* radius of corners, more rounded */
+    padding: 40px 12px; /* sets inner space of element, first for top/bottom, second for left/right */
+    box-sizing: border-box; /* makes sure specified dimensions above stay consisten/dont expand beyond */
+    text-align: left;
+}
+
+.ME .whoami-col:hover{
+    box-shadow: 0 0 20px 0px rgba(112, 111, 111, 0.5);
+}
+
+/* MY projects section */
+
+.MY_PROJECTS{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+} 
+.h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{ /* makes into side by side sections instead of all below one another */
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects-col{
+    flex-basis: 49%; /* amount of horizontal space taken  */
+    background: #f4f3cc;
+    border-radius: 10px; /* radius of corners, more rounded */
+    margin-bottom: 5%; /* creates space btw this and below stuff */
+    padding: 40px 12px; /* sets inner space of element, first for top/bottom, second for left/right */
+    box-sizing: border-box; /* makes sure specified dimensions above stay consisten/dont expand beyond */
+
+}
+
+.projects-col:hover{
+    box-shadow: 0 0 20px 0px rgba(112, 111, 111, 0.5);
+}
+
+.projects-col img {
+    border-radius: 10px; /* Makes the image rounded edges */
+    max-width: 200px; /* Sets the maximum width of the image to 100 pixels */
+    height: auto; /* Automatically adjusts the height while maintaining the aspect ratio */
+  }
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+@media(max-width:700px){ /* for looking good on smaller devices  */
+    .row{
+        flex-direction: column;
+    }
+}
+
+/* Contact Section */
+
+.MY_CONTACT{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/sky.PNG); /* makes darker on top of pic, so words can show */
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.MY_CONTACT h1{
+    color: white;
+    margin-bottom: 40px;
+    padding: 0%;
+}
+
+.myInfo-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #643269;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline on button, bc default on link is underline */
+    margin-bottom: 40px;
+}
+
+.myInfo-button:hover {
+    background-color: #974a9f;
+  }
+
+.Dev2-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #804085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline on button, bc default on link is underline */
+    margin-bottom: 40px;
+}
+
+.Dev2-button:hover {
+    background-color: #974a9f;
+  }
+
+.Dev3-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #804085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline on button, bc default on link is underline */
+    margin-bottom: 40px;
+}
+
+.Dev3-button:hover {
+    background-color: #974a9f;
+  }
+
+.Dev4-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #804085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline on button, bc default on link is underline */
+    margin-bottom: 40px;
+}
+
+.Dev4-button:hover {
+    background-color: #974a9f;
+  }
+
+.Dev5-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #804085;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* removes underline on button, bc default on link is underline */
+    margin-bottom: 40px;
+}
+
+.Dev5-button:hover {
+    background-color: #974a9f;
+  }
